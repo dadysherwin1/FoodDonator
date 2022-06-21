@@ -11,7 +11,7 @@ import SwiftUI
 struct Food_DonatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(classifier: ImageClassifier())
         }
     }
 }

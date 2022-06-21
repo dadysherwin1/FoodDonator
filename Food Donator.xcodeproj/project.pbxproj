@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E148BFB28618B10001A5265 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E148BFA28618B10001A5265 /* ImagePicker.swift */; };
+		3E148BFD28618F22001A5265 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E148BFC28618F22001A5265 /* Classifier.swift */; };
+		3E148BFF2861963A001A5265 /* ImageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E148BFE2861963A001A5265 /* ImageClassifier.swift */; };
+		3E148C012861996B001A5265 /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3E148C002861996B001A5265 /* MobileNetV2.mlmodel */; };
 		3E2F9A592861791000DA4403 /* Food_DonatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2F9A582861791000DA4403 /* Food_DonatorApp.swift */; };
 		3E2F9A5B2861791000DA4403 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2F9A5A2861791000DA4403 /* ContentView.swift */; };
 		3E2F9A5D2861791100DA4403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E2F9A5C2861791100DA4403 /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E148BFA28618B10001A5265 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		3E148BFC28618F22001A5265 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
+		3E148BFE2861963A001A5265 /* ImageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassifier.swift; sourceTree = "<group>"; };
+		3E148C002861996B001A5265 /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 		3E2F9A552861791000DA4403 /* Food Donator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Donator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2F9A582861791000DA4403 /* Food_DonatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_DonatorApp.swift; sourceTree = "<group>"; };
 		3E2F9A5A2861791000DA4403 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +61,10 @@
 			children = (
 				3E2F9A582861791000DA4403 /* Food_DonatorApp.swift */,
 				3E2F9A5A2861791000DA4403 /* ContentView.swift */,
+				3E148BFE2861963A001A5265 /* ImageClassifier.swift */,
+				3E148BFC28618F22001A5265 /* Classifier.swift */,
+				3E148C002861996B001A5265 /* MobileNetV2.mlmodel */,
+				3E148BFA28618B10001A5265 /* ImagePicker.swift */,
 				3E2F9A5C2861791100DA4403 /* Assets.xcassets */,
 				3E2F9A5E2861791100DA4403 /* Preview Content */,
 			);
@@ -137,6 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E148C012861996B001A5265 /* MobileNetV2.mlmodel in Sources */,
+				3E148BFD28618F22001A5265 /* Classifier.swift in Sources */,
+				3E148BFB28618B10001A5265 /* ImagePicker.swift in Sources */,
+				3E148BFF2861963A001A5265 /* ImageClassifier.swift in Sources */,
 				3E2F9A5B2861791000DA4403 /* ContentView.swift in Sources */,
 				3E2F9A592861791000DA4403 /* Food_DonatorApp.swift in Sources */,
 			);
