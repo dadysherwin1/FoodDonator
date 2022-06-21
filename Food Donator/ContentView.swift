@@ -8,6 +8,9 @@ A view showing the details for a landmark.
 import SwiftUI
 
 struct ContentView: View {
+    
+    var camera = CustomCameraController()
+    
     var body: some View {
         VStack {
             TabView {

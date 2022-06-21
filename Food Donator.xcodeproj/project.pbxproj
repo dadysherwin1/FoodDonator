@@ -11,6 +11,7 @@
 		3E2F9A5B2861791000DA4403 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2F9A5A2861791000DA4403 /* ContentView.swift */; };
 		3E2F9A5D2861791100DA4403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E2F9A5C2861791100DA4403 /* Assets.xcassets */; };
 		3E2F9A602861791100DA4403 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E2F9A5F2861791100DA4403 /* Preview Assets.xcassets */; };
+		3E2F9A6728618C2400DA4403 /* CustomCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2F9A6628618C2400DA4403 /* CustomCameraController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		3E2F9A5A2861791000DA4403 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3E2F9A5C2861791100DA4403 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E2F9A5F2861791100DA4403 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3E2F9A6628618C2400DA4403 /* CustomCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				3E2F9A582861791000DA4403 /* Food_DonatorApp.swift */,
 				3E2F9A5A2861791000DA4403 /* ContentView.swift */,
+				3E2F9A6628618C2400DA4403 /* CustomCameraController.swift */,
 				3E2F9A5C2861791100DA4403 /* Assets.xcassets */,
 				3E2F9A5E2861791100DA4403 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				3E2F9A5B2861791000DA4403 /* ContentView.swift in Sources */,
 				3E2F9A592861791000DA4403 /* Food_DonatorApp.swift in Sources */,
+				3E2F9A6728618C2400DA4403 /* CustomCameraController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
