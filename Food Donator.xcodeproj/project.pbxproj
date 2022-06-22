@@ -17,6 +17,8 @@
 		3E148C152862A3F9001A5265 /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3E148C142862A3F9001A5265 /* MobileNetV2.mlmodel */; };
 		3E148C172862AC54001A5265 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E148C162862AC54001A5265 /* LocationView.swift */; };
 		3E148C192862B01C001A5265 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E148C182862B01C001A5265 /* LocationService.swift */; };
+		3E148C1B2862BFDE001A5265 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E148C1A2862BFDE001A5265 /* Account.swift */; };
+		3E148C1D2862BFFE001A5265 /* Donate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E148C1C2862BFFE001A5265 /* Donate.swift */; };
 		3E2F9A592861791000DA4403 /* Food_DonatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2F9A582861791000DA4403 /* Food_DonatorApp.swift */; };
 		3E2F9A5B2861791000DA4403 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2F9A5A2861791000DA4403 /* ContentView.swift */; };
 		3E2F9A5D2861791100DA4403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E2F9A5C2861791100DA4403 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		3E148C142862A3F9001A5265 /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 		3E148C162862AC54001A5265 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		3E148C182862B01C001A5265 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		3E148C1A2862BFDE001A5265 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		3E148C1C2862BFFE001A5265 /* Donate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donate.swift; sourceTree = "<group>"; };
 		3E2F9A552861791000DA4403 /* Food Donator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Donator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2F9A582861791000DA4403 /* Food_DonatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_DonatorApp.swift; sourceTree = "<group>"; };
 		3E2F9A5A2861791000DA4403 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				3E148C0A28629ED7001A5265 /* Rewards */,
 				3E2F9A582861791000DA4403 /* Food_DonatorApp.swift */,
 				3E2F9A5A2861791000DA4403 /* ContentView.swift */,
+				3E148C1C2862BFFE001A5265 /* Donate.swift */,
+				3E148C1A2862BFDE001A5265 /* Account.swift */,
 				3E148C0628629BA2001A5265 /* LocationDetail.swift */,
 				3E148C0428629A5B001A5265 /* Detail.swift */,
 				3E2F9A5C2861791100DA4403 /* Assets.xcassets */,
@@ -184,6 +190,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E2F9A5B2861791000DA4403 /* ContentView.swift in Sources */,
+				3E148C1B2862BFDE001A5265 /* Account.swift in Sources */,
+				3E148C1D2862BFFE001A5265 /* Donate.swift in Sources */,
 				3E148C0928629D6E001A5265 /* Rewards.swift in Sources */,
 				3E148C0D2862A019001A5265 /* SwiftUIView.swift in Sources */,
 				3E2F9A592861791000DA4403 /* Food_DonatorApp.swift in Sources */,

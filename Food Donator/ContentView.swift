@@ -70,10 +70,16 @@ struct ContentView: View {
                 Text("Home")
             }
             
-            Text("New Screen")
+            AccountForm()
                 .tabItem {
-                    Image(systemName: "checkmark.circle")
-                    Text("New Screen")
+                    Image(systemName: "person.circle")
+                    Text("Account")
+                }
+            
+            DonateFundsList()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Donate")
                 }
         }
     }
