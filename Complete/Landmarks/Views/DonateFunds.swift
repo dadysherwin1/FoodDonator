@@ -15,7 +15,9 @@ A view showing a list of landmarks.
 
 import SwiftUI
 
-struct DonateList: View {
+
+
+struct DonateFundsList: View {
     @State var CCFirstName: String = ""
     @State var CCLastName: String = ""
     @State var Amount: String = ""
@@ -39,7 +41,10 @@ struct DonateList: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Amount")) {
+                Text("This App is run by non-profit organization. Please support us! Thank you.")
+                    .font(.system(size: 16, weight: .light, design: .serif))
+                    .italic()
+                Section(header: Text("Donation Details").font(.system(size: 30, weight: .bold, design: .rounded))) {
                     TextField("First Name", text: $CCFirstName)
                     TextField("Last Name", text: $CCLastName)
                     TextField("Amount", text: $Amount)
@@ -47,15 +52,15 @@ struct DonateList: View {
                     TextField("Credit Card Number", text: $CreditCard)
                     TextField("CVV", text: $CVV)
                 }
-            }
             
-            Section(header: Text("Donation Invoice")) {
+            Section(header: Text("Donation Invoice").font(.system(size: 30, weight: .bold, design: .rounded))) {
                 TextField("First Name", text: $FirstName)
                 TextField("Last Name", text: $LastName)
                 TextField("Company Name", text: $CompanyName)
                 TextField("Address", text: $Address)
                 TextField("Email", text: $Email)
             }
+        }
         }
         .navigationBarTitle("Donation")
     }
