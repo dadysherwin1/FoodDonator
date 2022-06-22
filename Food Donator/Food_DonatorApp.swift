@@ -14,4 +14,8 @@ struct Food_DonatorApp: App {
             ContentView()
         }
     }
+    
+    init() {
+        
+    }
 }

@@ -29,18 +29,47 @@ struct ContentView: View {
             List {
                 ForEach(menuOptions, id: \.self) { option in
                     NavigationLink {
-                        if option.title == "Locations" {
-                            LocationDetail().navigationTitle("Locations")
-                        } else if option.title == "Rewards" {
-                            Rewards()
-                        } else {
-                            Detail(menuOption: option)
-                        }
+                        destination(for: option)
                     } label: {
-                        Label(option.title, systemImage: option.systemImageName)
+                        HStack {
+                            Image(systemName: option.systemImageName)
+                            Text(option.title)
+                        }
                     }
+
+//                    NavigationLink {
+//                        if option.title == "Locations" {
+//                            LocationDetail().navigationTitle("Locations")
+//                        } else if option.title == "Rewards" {
+//                            Rewards()
+//                        } else if option.title == "Launch" {
+//
+//                        } else {
+//                            Detail(menuOption: option)
+//                        }
+//                    } label: {
+//                        Label(option.title, systemImage: option.systemImageName)
+//                    }
                 }
             }.navigationTitle("Home")
+        }
+    }
+    
+    
+    @ViewBuilder
+    private func destination(for option: MenuOption) -> some View {
+        Group {
+            switch option.title {
+            case "Locations":
+                LocationDetail()
+                //                .navigationTitle("Locations")
+            case "Rewards":
+                Rewards()
+            case "Launch":
+                Scanner(classifier: ImageClassifier())
+            default:
+                Text("Shouldn't happen")
+            }
         }
     }
 }
