@@ -10,7 +10,8 @@ import CoreLocation
 import MapKit
 
 struct LocationView : View {
-    var positions : [GeoPoint]
+    var destination: GeoPoint
+    var userLocation: GeoPoint?
     
     struct IdentifiablePoint: Identifiable {
         var id = UUID()
@@ -23,7 +24,7 @@ struct LocationView : View {
         var minLon = 181.0
         var maxLon = -181.0
         
-        for i in positions {
+        for i in [destination, userLocation].compactMap({ $0 }) {
             maxLat = max(maxLat, i.latitude)
             minLat = min(minLat, i.latitude)
             maxLon = max(maxLon, i.longitude)
@@ -42,7 +43,7 @@ struct LocationView : View {
     var body: some View {
         let center = centerOfPoints
         
-        return Map(coordinateRegion: .constant(MKCoordinateRegion(center: center.center, span: center.span)), showsUserLocation: true, annotationItems: positions.map { IdentifiablePoint(position: $0)}) { (point) in
+        return Map(coordinateRegion: .constant(MKCoordinateRegion(center: center.center, span: center.span)), showsUserLocation: true, annotationItems: [IdentifiablePoint(position: destination)]) { (point) in
             MapPin(coordinate: CLLocationCoordinate2D(latitude: point.position.latitude,
                                                       longitude: point.position.longitude))
         }
@@ -51,10 +52,7 @@ struct LocationView : View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(positions: [
-            GeoPoint(latitude: -33.874192, longitude: 151.206696),
-            GeoPoint(latitude: -33.876298, longitude: 151.206078)
-        ])
+        LocationView(destination: GeoPoint(latitude: -33.874192, longitude: 151.206696), userLocation: GeoPoint(latitude: -33.876298, longitude: 151.206078))
     }
 }
 

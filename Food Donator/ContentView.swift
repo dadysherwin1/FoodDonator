@@ -22,36 +22,59 @@ struct MenuOption: Identifiable, Hashable {
 }
 
 struct ContentView: View {
-    var menuOptions = MenuOption.all()
+    @StateObject var locationService: LocationService = .shared
+    
+    var menuOptions: [MenuOption] {
+        MenuOption.all().filter { option in
+            guard option.title == "Locations" else {
+                return true
+            }
+            return locationService.userLocation != nil
+        }
+        
+    }
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(menuOptions, id: \.self) { option in
-                    NavigationLink {
-                        destination(for: option)
-                    } label: {
-                        HStack {
-                            Image(systemName: option.systemImageName)
-                            Text(option.title)
+        TabView {
+            NavigationView {
+                List {
+                    ForEach(menuOptions, id: \.self) { option in
+                        NavigationLink {
+                            destination(for: option)
+                        } label: {
+                            HStack {
+                                Image(systemName: option.systemImageName)
+                                Text(option.title)
+                            }
                         }
-                    }
 
-//                    NavigationLink {
-//                        if option.title == "Locations" {
-//                            LocationDetail().navigationTitle("Locations")
-//                        } else if option.title == "Rewards" {
-//                            Rewards()
-//                        } else if option.title == "Launch" {
-//
-//                        } else {
-//                            Detail(menuOption: option)
-//                        }
-//                    } label: {
-//                        Label(option.title, systemImage: option.systemImageName)
-//                    }
+    //                    NavigationLink {
+    //                        if option.title == "Locations" {
+    //                            LocationDetail().navigationTitle("Locations")
+    //                        } else if option.title == "Rewards" {
+    //                            Rewards()
+    //                        } else if option.title == "Launch" {
+    //
+    //                        } else {
+    //                            Detail(menuOption: option)
+    //                        }
+    //                    } label: {
+    //                        Label(option.title, systemImage: option.systemImageName)
+    //                    }
+                    }
+                }.navigationTitle("Home")
+            }
+            
+            .tabItem {
+                Image(systemName: "house.fill")
+                Text("Home")
+            }
+            
+            Text("New Screen")
+                .tabItem {
+                    Image(systemName: "checkmark.circle")
+                    Text("New Screen")
                 }
-            }.navigationTitle("Home")
         }
     }
     
@@ -62,6 +85,7 @@ struct ContentView: View {
             switch option.title {
             case "Locations":
                 LocationDetail()
+                    .environmentObject(locationService)
                 //                .navigationTitle("Locations")
             case "Rewards":
                 Rewards()
