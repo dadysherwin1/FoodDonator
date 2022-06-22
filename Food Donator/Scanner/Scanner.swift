@@ -18,103 +18,84 @@ struct Scanner: View {
         
         var body: some View {
             VStack {
-                TabView {
-                    VStack{
-                        Text("Home Tab")
-                        Button("Launch", action: {})
-                        Button("Locations", action: {})
-                        Button(action: {
-                            print("button pressed")
-
-                            }) {
-                                Image(systemName: "house.fill")
-                                .renderingMode(Image.TemplateRenderingMode?.init(Image.TemplateRenderingMode.original))
-                            }
-
+                        
+            VStack{
+                HStack{
+                    Image(systemName: "photo")
+                        .onTapGesture {
+                            isPresenting = true
+                        }
+                    Image(systemName: "camera")
+                }
+                .font(.largeTitle)
+                .foregroundColor(.yellow)
+                
+                Rectangle()
+                    .strokeBorder()
+                    .foregroundColor(.blue)
+                    .overlay(
+                        Group {
+                          if uiImage != nil {
+                            Image(uiImage: uiImage!)
+                              .resizable()
+                              .scaledToFit()
+                          }
+                        }
+                      )
+                
+                VStack{
+                    Button(action: {
+                        if uiImage != nil {
+                            classifier.detect(uiImage: uiImage!)
+                        }
+                    }) {
+                        Image(systemName: "bolt.fill")
+                            .foregroundColor(.orange)
+                            .font(.title)
                     }
-                        .font(.system(size: 30, weight: .bold, design: .rounded))
-                        .tabItem {
-                            Image(systemName: "house.fill")
-                            Text("Home")
-                        }
-                        
-                    VStack{
-                        HStack{
-                            Image(systemName: "photo")
-                                .onTapGesture {
-                                    isPresenting = true
-                                }
-                            Image(systemName: "camera")
-                        }
-                        .font(.largeTitle)
-                        .foregroundColor(.yellow)
-                        
-                        Rectangle()
-                            .strokeBorder()
-                            .foregroundColor(.blue)
-                            .overlay(
-                                Group {
-                                  if uiImage != nil {
-                                    Image(uiImage: uiImage!)
-                                      .resizable()
-                                      .scaledToFit()
-                                  }
-                                }
-                              )
-                        
-                        VStack{
-                            Button(action: {
-                                if uiImage != nil {
-                                    classifier.detect(uiImage: uiImage!)
-                                }
-                            }) {
-                                Image(systemName: "bolt.fill")
-                                    .foregroundColor(.orange)
-                                    .font(.title)
+                    
+                    
+                    Group {
+                        if let imageClass = classifier.imageClass {
+                            HStack{
+                                Text("Image categories:")
+                                    .font(.caption)
+                                Text(imageClass)
+                                    .bold()
                             }
-                            
-                            
-                            Group {
-                                if let imageClass = classifier.imageClass {
-                                    HStack{
-                                        Text("Image categories:")
-                                            .font(.caption)
-                                        Text(imageClass)
-                                            .bold()
-                                    }
-                                } else {
-                                    HStack{
-                                        Text("Image categories: NA")
-                                            .font(.caption)
-                                    }
-                                }
-                            }
-                            .font(.subheadline)
-                            .padding()
-                                
+                        } else {
+                            HStack{
+                                Text("Image categories: NA")
+                                    .font(.caption)
                             }
                         }
-
                     }
-                        
-                    .sheet(isPresented: $isPresenting){
-                            ImagePicker(uiImage: $uiImage, isPresenting:  $isPresenting, sourceType: $sourceType)
-                                .onDisappear{
-                                    if uiImage != nil {
-                                        classifier.detect(uiImage: uiImage!)
-                                    }
-                                }
-                            
-                        }
+                    .font(.subheadline)
                     .padding()
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("Camera")
+                        
                     }
                 }
+
+            }
+                
+            .sheet(isPresented: $isPresenting){
+                    ImagePicker(uiImage: $uiImage, isPresenting:  $isPresenting, sourceType: $sourceType)
+                        .onDisappear{
+                            if uiImage != nil {
+                                classifier.detect(uiImage: uiImage!)
+                            }
+                        }
+                    
+                }
+            .padding()
+            .font(.system(size: 30, weight: .bold, design: .rounded))
+            .tabItem {
+                Image(systemName: "house.fill")
+                Text("Camera")
             }
         }
+    }
+
 
 struct Scanner_Previews: PreviewProvider {
     static var previews: some View {
